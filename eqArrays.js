@@ -11,7 +11,7 @@ const eqArrays = function(a, b) {
   let stringA = a.join(', ');
   let stringB = b.join(', ');
   if (stringA === stringB) {
-    return true;
+    return [a];
   }
 };
 
