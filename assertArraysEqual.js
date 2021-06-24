@@ -1,12 +1,12 @@
-const eqArrays = function (arr1, arr2) {
+const eqArrays = function(arr1, arr2) {
   if (arr1 === undefined) return "arr1 is undefined";
   if (arr2 === undefined) return "arr2 is undefined";
-  let isEqual = 
-  arr1.length === arr2.length ? 
-  arr1.every(function (element, index) {
-    return element === arr2[index];
-  }) : false;
-   return isEqual;
+  let isEqual =
+  arr1.length === arr2.length ?
+    arr1.every(function(element, index) {
+      return element === arr2[index];
+    }) : false;
+  return isEqual;
 };
 
 const assertArraysEqual = function(actual, expected) {
