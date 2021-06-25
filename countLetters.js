@@ -7,13 +7,14 @@ const assertEqual = function(actual, expected) {
 };
 
 const countLetters = function (string) {
-  let countOfLetters = { };
+  let countOfLetters = {};
   for (const char of string) {
     if (char === " ") {
       continue
     } else if (countOfLetters.hasOwnProperty(char) === false) {
       countOfLetters[char] = 1;
     } else if (countOfLetters.hasOwnProperty(char) === true) {
+      console.log(`char: ${char}`)
       countOfLetters[char] += 1;
     }
   };
@@ -22,7 +23,7 @@ const countLetters = function (string) {
 
 countLetters("Hello");
 console.log(countLetters("Hello"));
-
+/*
 countLetters("Red Blue");
 console.log(countLetters("Red Blue"));
 
@@ -31,4 +32,4 @@ console.log(countLetters("Blue Jays"));
 
 countLetters("abcdefghijklmnopqrstuvwxyz");
 console.log(countLetters("abcdefghijklmnopqrstuvwxyz"));
-
+*/
