@@ -14,7 +14,6 @@ const countLetters = function (string) {
     } else if (countOfLetters.hasOwnProperty(char) === false) {
       countOfLetters[char] = 1;
     } else if (countOfLetters.hasOwnProperty(char) === true) {
-      console.log(`char: ${char}`)
       countOfLetters[char] += 1;
     }
   };
