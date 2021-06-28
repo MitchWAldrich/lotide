@@ -6,11 +6,13 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const tail = function(a) {
-  let newArray = a.slice(1);
+const tail = function(array) {
+  let newArray = array.slice(1);
+  console.log(newArray);
   return newArray;
 };
 
-const practise = ["Lighthouse", "Labs", "Bootcamp"];
-tail(practise);
-assertEqual(practise.length, 3);
+module.exports = {
+  assertEqual,
+  tail
+};
