@@ -1,12 +1,12 @@
 const eqArrays = function(arr1, arr2) {
-  if (arr1 === undefined) return "arr1 is undefined";
-  if (arr2 === undefined) return "arr2 is undefined";
-  let isEqual =
-  arr1.length === arr2.length ?
-    arr1.every(function(element, index) {
-      return element === arr2[index];
-    }) : false;
-  return isEqual;
+  for (i = 0; i < arr1.length; i++) {
+    for (j = 0; j < arr2.length; j++) {
+      if (arr2[j] !== arr1[j]) {
+        return false;
+      }
+    }
+  }
+  return true
 };
 
 const assertArraysEqual = function(actual, expected) {
@@ -21,5 +21,5 @@ const assertArraysEqual = function(actual, expected) {
 
 assertArraysEqual([1, 2, 3], [1, 3, 2]);
 assertArraysEqual(["Fred", "Latoya"], ["Fred", "Latoya"]);
-assertArraysEqual([0, "zero", ""], [0, "zero", "none"]);
+assertArraysEqual([0, "zero", "none"], [0, "zero", "none"]);
 
