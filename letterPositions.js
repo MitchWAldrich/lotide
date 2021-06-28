@@ -1,12 +1,12 @@
 const eqArrays = function(arr1, arr2) {
-  if (arr1 === undefined) return "arr1 is undefined";
-  if (arr2 === undefined) return "arr2 is undefined";
-  let isEqual =
-  arr1.length === arr2.length ?
-    arr1.every(function(element, index) {
-      return element === arr2[index];
-    }) : false;
-  return isEqual;
+  for (i = 0; i < arr1.length; i++) {
+    for (j = 0; j < arr2.length; j++) {
+      if (arr2[j] !== arr1[j]) {
+        return false;
+      }
+    }
+  }
+  return true
 };
 
 const assertArraysEqual = function(actual, expected) {
@@ -46,7 +46,7 @@ const letterPositions = function(sentence) {
 letterPositions("hello");
 letterPositions("Lighthouse in the house");
 // console.log(`return: ${letterPositions("hello")}`);
-// assertArraysEqual(letterPositions("hello"), {h:[0], e:[1], l:[2,3], o:[4]});
-
+assertArraysEqual(letterPositions("hello").e, [1]);
+assertArraysEqual(letterPositions("Lighthouse in the house").i, [1, 10]);
 
 
