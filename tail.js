@@ -8,11 +8,7 @@ const assertEqual = function(actual, expected) {
 
 const tail = function(array) {
   let newArray = array.slice(1);
-  console.log(newArray);
   return newArray;
 };
 
-module.exports = {
-  assertEqual,
-  tail
-};
+module.exports = tail;

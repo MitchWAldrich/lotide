@@ -1,5 +1,5 @@
-const tail = require('../tail').tail;
-const assertEqual = require('../tail').assertEqual;
+const tail = require('../tail');
+const assertEqual = require('../assertEqual');
 
 const practise = tail(["Lighthouse", "Labs", "Bootcamp"]);
 assertEqual(practise.length, 2);
