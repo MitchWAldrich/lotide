@@ -7,16 +7,15 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqArrays = function(arr1, arr2) {
-  if (arr1 === undefined) return "arr1 is undefined";
-  if (arr2 === undefined) return "arr2 is undefined";
-  let isEqual =
-  arr1.length === arr2.length ?
-    arr1.every(function(element, index) {
-      return element === arr2[index];
-    }) : false;
-  return isEqual;
+  for (i = 0; i < arr1.length; i++) {
+    for (j = 0; j < arr2.length; j++) {
+      if (arr2[j] !== arr1[j]) {
+        return false;
+      }
+    }
+  }
+  return true
 };
-
 const eqObjects = function(object1, object2) {
   const keysOne = Object.keys(object1);
   const keysTwo = Object.keys(object2);
@@ -39,7 +38,7 @@ const eqObjects = function(object1, object2) {
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 eqObjects(cd, dc); // => true
-assertEqual(eqObjects(cd, dc), true);
+assertEqual(eqObjects(cd, dc), false);
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 eqObjects(cd, cd2); // => false
