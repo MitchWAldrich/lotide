@@ -7,6 +7,9 @@ const assertEqual = function(actual, expected) {
 };
 
 const tail = function(array) {
+  if (array === undefined) {
+    return undefined;
+  };
   let newArray = array.slice(1);
   return newArray;
 };
