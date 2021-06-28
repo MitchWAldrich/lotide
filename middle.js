@@ -1,12 +1,12 @@
-const eqArrays = function (arr1, arr2) {
-  if (arr1 === undefined) return "arr1 is undefined";
-  if (arr2 === undefined) return "arr2 is undefined";
-  let isEqual = 
-  arr1.length === arr2.length ? 
-  arr1.every(function (element, index) {
-    return element === arr2[index];
-  }) : false;
-   return isEqual;
+const eqArrays = function(arr1, arr2) {
+  for (i = 0; i < arr1.length; i++) {
+    for (j = 0; j < arr2.length; j++) {
+      if (arr2[j] !== arr1[j]) {
+        return false;
+      }
+    }
+  }
+  return true
 };
 
 const assertArraysEqual = function(actual, expected) {
@@ -54,4 +54,4 @@ middle([1, 2, 3, 4, 5]) // => [3]
 // assert array tests
 
 assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 5]);
