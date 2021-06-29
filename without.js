@@ -1,9 +1,12 @@
-const eqArrays = function(a, b) {
-  let stringA = a.join(', ');
-  let stringB = b.join(', ');
-  if (stringA === stringB) {
-    return true;
+const eqArrays = function(arr1, arr2) {
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr2[j] !== arr1[j]) {
+        return false;
+      }
+    }
   }
+  return true;
 };
 
 const assertArraysEqual = function(actual, expected) {
@@ -13,40 +16,33 @@ const assertArraysEqual = function(actual, expected) {
     console.log(`🔴🔴🔴Assertion Failed: ${actual} !== ${expected}`);
   }
 };
-/*Implement without which will return a subset of a given array, removing unwanted elements.
-
-This function should take in a source array and a itemsToRemove array. It should return a new array with only those elements from source that are not present in the itemsToRemove array.
-
-Here are a couple examples, but please don't limit your testing to just these scenarios:*/
-
-
 
 const without = function(source, itemsToRemove) {
   let included = true;
-  let newArray = [];
+  let keepArray = [];
   for (let item of source) {
     included = true;
     for (let removals of itemsToRemove) {
-      if (item === removals) {
+      if (removals === item) {
         included = false;
       }
     }
     if (included) {
-      newArray.push(item);
+      keepArray.push(item);
     }
   }
-  console.log(newArray);
-  return newArray;
+  return keepArray;
 };
 
-without([1, 2, 3], [1]); // => [2, 3]
-without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
-without(["dogs", "cats", "bunnies"], ["bunnies"]);
+module.exports = without;
 
-assertArraysEqual(["1", "2", "3"], [1, 2, "3"]);
-assertArraysEqual(["dogs", "cats", "bunnies"], ["bunnies"]);
+// without([1, 2, 3], [1]); // => [2, 3]
+// without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
+// without(["Iron Man", "Black Widow", "Thor"], ["Thor"]);
 
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); // no need to capture return value for this test case
-// Make sure the original array was not altered by the without function
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+// assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
+// assertArraysEqual(without(["dogs", "cats", "bunnies"], ["bunnies"]), ["dogs", "cats"]);
+
+// const words = ["hello", "world", "lighthouse"];
+// without(words, ["lighthouse"]); 
+// assertArraysEqual(without(words, ["lighthouse"]), ["hello", "world"]);

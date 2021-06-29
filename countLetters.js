@@ -19,16 +19,17 @@ const countLetters = function (string) {
   };
   return countOfLetters;
 }
+module.exports = countLetters;
 
-countLetters("Hello");
-console.log(countLetters("Hello"));
-/*
-countLetters("Red Blue");
-console.log(countLetters("Red Blue"));
+// // countLetters("Hello");
+// // console.log(countLetters("Hello"));
 
-countLetters("Blue Jays");
-console.log(countLetters("Blue Jays"));
+// countLetters("Red Blue");
+// console.log(countLetters("Red Blue"));
 
-countLetters("abcdefghijklmnopqrstuvwxyz");
-console.log(countLetters("abcdefghijklmnopqrstuvwxyz"));
-*/
+// countLetters("Blue Jays");
+// console.log(countLetters("Blue Jays"));
+
+// countLetters("abcdefghijklmnopqrstuvwxyz");
+// console.log(countLetters("abcdefghijklmnopqrstuvwxyz"));
+// 

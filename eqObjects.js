@@ -16,6 +16,7 @@ const eqArrays = function(arr1, arr2) {
   }
   return true
 };
+
 const eqObjects = function(object1, object2) {
   const keysOne = Object.keys(object1);
   const keysTwo = Object.keys(object2);
@@ -35,20 +36,22 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-eqObjects(cd, dc); // => true
-assertEqual(eqObjects(cd, dc), false);
+module.exports = eqObjects;
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-eqObjects(cd, cd2); // => false
-assertEqual(eqObjects(cd, cd2), false);
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// eqObjects(cd, dc); // => true
+// assertEqual(eqObjects(cd, dc), false);
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-eqObjects(ab, ba); // => true
-assertEqual(eqObjects(ab, ba), true);
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// eqObjects(cd, cd2); // => false
+// assertEqual(eqObjects(cd, cd2), false);
 
-const abc = { a: "1", b: "2", c: "3" };
-eqObjects(ab, abc); // => false
-assertEqual(eqObjects(ab, abc), false);
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2", a: "1" };
+// eqObjects(ab, ba); // => true
+// assertEqual(eqObjects(ab, ba), true);
+
+// const abc = { a: "1", b: "2", c: "3" };
+// eqObjects(ab, abc); // => false
+// assertEqual(eqObjects(ab, abc), false);

@@ -38,15 +38,14 @@ const letterPositions = function(sentence) {
       }
     }
   }
-  // console.log(results);
   return results;
 };
+module.exports = letterPositions;
 
-
-letterPositions("hello");
-letterPositions("Lighthouse in the house");
-// console.log(`return: ${letterPositions("hello")}`);
-assertArraysEqual(letterPositions("hello").e, [1]);
-assertArraysEqual(letterPositions("Lighthouse in the house").i, [1, 10]);
+// letterPositions("hello");
+// letterPositions("Lighthouse in the house");
+// // console.log(`return: ${letterPositions("hello")}`);
+// assertArraysEqual(letterPositions("hello").e, [1]);
+// assertArraysEqual(letterPositions("Lighthouse in the house").i, [1, 10]);
 
 
