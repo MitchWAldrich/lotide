@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@mitchwaldrich/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A collection of functions in the style of the lodash library.",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/MitchWAldrich/lotide.git"
   },
-  "author": "",
+  "author": "Mitch Aldrich <mitch.w.aldrich@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MitchWAldrich/lotide/issues"
